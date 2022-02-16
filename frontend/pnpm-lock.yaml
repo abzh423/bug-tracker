@@ -18,6 +18,7 @@ specifiers:
   webpack: ^5.68.0
   webpack-cli: ^4.9.2
   webpack-dev-server: ^4.7.4
+  webpack-merge: ^5.8.0
 
 dependencies:
   react: 17.0.2
@@ -39,6 +40,7 @@ devDependencies:
   webpack: 5.68.0_webpack-cli@4.9.2
   webpack-cli: 4.9.2_19108610e47e80b101fe97b50133aa84
   webpack-dev-server: 4.7.4_webpack-cli@4.9.2+webpack@5.68.0
+  webpack-merge: 5.8.0
 
 packages:
 
