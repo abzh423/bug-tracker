@@ -1,3 +1,6 @@
+import "./styles.css";
+import FLOWERS from "./flowers.jpg";
+
 const App = () => {
   return (
     <div>
@@ -10,6 +13,7 @@ const App = () => {
         repellat facilis odio numquam, excepturi, omnis, aliquam dignissimos
         necessitatibus ad officia possimus.
       </p>
+      <img src={FLOWERS} alt="flowers" />
     </div>
   );
 };
