@@ -1,6 +1,6 @@
-import "./styles.css";
-import FLOWERS from "./flowers.jpg";
-import LOGO from "./logo.svg";
+import './styles.css'
+import FLOWERS from './flowers.jpg'
+import LOGO from './logo.svg'
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
       <img src={FLOWERS} alt="flowers" />
       <img src={LOGO} alt="logo" />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
