@@ -1,6 +1,0 @@
-// allows to provide intellisense (vscode) for everything that is build in jest
-{
-  "typeAcquisition": {
-    "include": ["jest"]
-  }
-}
