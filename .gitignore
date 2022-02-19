@@ -1,0 +1,5 @@
+frontend/build
+frontend/node_modules
+frontend/pnpm-lock.yaml
+backend/node_modules
+backend/pnpm-lock.yaml
