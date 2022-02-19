@@ -1,8 +1,8 @@
 // aimed only at typechecking
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "ESNext",
+    "target": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "lib": ["DOM", "ESNext"],
     "jsx": "react-jsx",

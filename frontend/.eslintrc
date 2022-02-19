@@ -18,7 +18,8 @@
     "plugin:import/typescript",
     "plugin:jsx-a11y/recommended",
     "prettier",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "google"
   ],
   "rules": {
     "no-unused-vars": "off",
@@ -27,6 +28,8 @@
     "react/prop-types": "off",
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off"
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "linebreak-style": 0,
+    "semi": 0
   }
 }
