@@ -24,8 +24,20 @@ app.use(
    }),
 )
 
-app.get('/', async (req, res) => {
-   res.send('Hi Mom')
+declare module 'express-session' {
+   export interface SessionData {
+      viewCount: number
+   }
+}
+
+app.get('/', (req, res) => {
+   if (req.session.viewCount) {
+      req.session.viewCount += 1
+   } else {
+      req.session.viewCount = 1
+   }
+
+   res.send(`Hello Mom ${req.session.viewCount}`)
 })
 
 const alter = true

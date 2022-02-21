@@ -4,4 +4,4 @@ backend/node_modules
 backend/dist
 backend/docker-compose.yml
 backend/.env
-backend/config
+backend/config/*
