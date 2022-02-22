@@ -1,7 +1,8 @@
 export interface IUser {
    id: string
    username: string
-   password: string
+   hash: string
+   salt: string
    email: string
    perms: string[]
    active: boolean
@@ -21,4 +22,9 @@ export interface ISessions {
    sid: string
    expire: string
    sess: any
+}
+
+export interface HashSalt {
+   salt: string
+   hash: string
 }

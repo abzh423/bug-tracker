@@ -24,6 +24,12 @@ app.use(
    }),
 )
 
+// passport
+passport.use(localStrategy)
+app.use(passport.initialize())
+app.use(passport.session())
+
+// body
 declare module 'express-session' {
    export interface SessionData {
       viewCount: number

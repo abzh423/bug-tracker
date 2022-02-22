@@ -22,7 +22,11 @@ export default (sequelize: any, DataTypes: IDataTypes): IUser => {
             },
          },
       },
-      password: {
+      hash: {
+         type: DataTypes.STRING,
+         allowNull: false,
+      },
+      salt: {
          type: DataTypes.STRING,
          allowNull: false,
       },
