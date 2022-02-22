@@ -1,20 +1,28 @@
 import express from 'express'
-import models from './models'
 import session from 'express-session'
+import pgStore from 'connect-pg-simple'
+import passport from 'passport'
+import models from './models'
 import {$port, $sessionSecret} from '../config'
+import localStrategy from './strategies/passportLocal'
+import auth from './routes/auth'
 
 const app = express()
-const PgSessionConnect = require('connect-pg-simple')(session)
+const PgStore = pgStore(session)
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+// routes
+app.use(auth)
+
+// express-sessions
 app.use(
    session({
       secret: $sessionSecret,
       resave: false,
       saveUninitialized: true,
-      store: new PgSessionConnect({
+      store: new PgStore({
          conString: models.uri,
          tableName: 'Sessions',
       }),
@@ -46,9 +54,9 @@ app.get('/', (req, res) => {
    res.send(`Hello Mom ${req.session.viewCount}`)
 })
 
+// database sync and server start
 const alter = true
 const force = false
-
 models.sequelize.sync({alter, force}).then(() => {
    console.log('Database has been successfuly synced')
    app.listen($port, () => {
