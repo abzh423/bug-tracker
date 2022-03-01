@@ -4,7 +4,7 @@ export interface IUser {
    hash: string
    salt: string
    email: string
-   perms: string[]
+   admin: boolean
    active: boolean
 }
 
@@ -16,6 +16,17 @@ export interface IDataTypes {
    DATE: string
    FLOAT: number
    JSON: object
+}
+
+export interface IBug {
+   id: string
+   title: string
+   description: string
+   reporter: string
+   status: string
+   assignee: string
+   severity: string
+   doBefore: Date
 }
 
 export interface ISessions {
