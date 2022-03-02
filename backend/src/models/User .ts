@@ -41,12 +41,12 @@ export default (sequelize: any, DataTypes: IDataTypes): IUser => {
             },
          },
       },
-      perms: {
-         type: DataTypes.STRING,
-         allowNull: false,
-         defaultValue: 'user',
-      },
       active: {
+         type: DataTypes.BOOLEAN,
+         allowNull: false,
+         defaultValue: false,
+      },
+      admin: {
          type: DataTypes.BOOLEAN,
          allowNull: false,
          defaultValue: false,

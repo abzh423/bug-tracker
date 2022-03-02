@@ -13,9 +13,6 @@ const PgStore = pgStore(session)
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-// routes
-app.use(auth)
-
 // express-sessions
 app.use(
    session({
@@ -37,22 +34,20 @@ passport.use(localStrategy)
 app.use(passport.initialize())
 app.use(passport.session())
 
-// body
-declare module 'express-session' {
-   export interface SessionData {
-      viewCount: number
-   }
-}
-
-app.get('/', (req, res) => {
-   if (req.session.viewCount) {
-      req.session.viewCount += 1
-   } else {
-      req.session.viewCount = 1
-   }
-
-   res.send(`Hello Mom ${req.session.viewCount}`)
+passport.serializeUser((user: any, done): void => {
+   done(null, user.id)
 })
+
+passport.deserializeUser((userId, done) => {
+   models.User.findOne({where: {id: userId}})
+      .then((user: any) => {
+         done(null, user)
+      })
+      .catch((err: any) => done(err))
+})
+
+// routes
+app.use(auth)
 
 // database sync and server start
 const alter = true

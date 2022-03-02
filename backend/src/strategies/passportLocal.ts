@@ -5,8 +5,8 @@ import models from '../models'
 const verifyCallback = (
    username: string,
    password: string,
-   done: (arg0: null, arg1?: boolean) => any,
-) => {
+   done: any,
+): void => {
    models.User.findOne({where: {username: username}})
       .then((user: any) => {
          if (!user) {
